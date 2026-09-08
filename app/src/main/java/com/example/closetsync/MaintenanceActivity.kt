@@ -5,7 +5,9 @@ import android.app.DatePickerDialog
 import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -31,6 +33,7 @@ class MaintenanceActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_maintenance)
 
         etClothingName = findViewById(R.id.etClothingName)
@@ -46,7 +49,6 @@ class MaintenanceActivity : AppCompatActivity() {
         val btnSetReminder =
             findViewById<MaterialButton>(R.id.btnSetReminder)
 
-        // DATE
         btnSelectDate.setOnClickListener {
 
             val calendar = Calendar.getInstance()
@@ -63,6 +65,7 @@ class MaintenanceActivity : AppCompatActivity() {
 
                     tvSelectedDate.text =
                         "$dayOfMonth/${month + 1}/$year"
+
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
@@ -70,7 +73,6 @@ class MaintenanceActivity : AppCompatActivity() {
             ).show()
         }
 
-        // TIME
         btnSelectTime.setOnClickListener {
 
             val calendar = Calendar.getInstance()
@@ -90,6 +92,7 @@ class MaintenanceActivity : AppCompatActivity() {
                             hourOfDay,
                             minute
                         )
+
                 },
                 calendar.get(Calendar.HOUR_OF_DAY),
                 calendar.get(Calendar.MINUTE),
@@ -97,13 +100,13 @@ class MaintenanceActivity : AppCompatActivity() {
             ).show()
         }
 
-        // SET REMINDER
         btnSetReminder.setOnClickListener {
 
             val clothingName =
                 etClothingName.text.toString().trim()
 
             if (clothingName.isEmpty()) {
+
                 Toast.makeText(
                     this,
                     "Enter clothing name",
@@ -114,6 +117,7 @@ class MaintenanceActivity : AppCompatActivity() {
             }
 
             if (!dateSelected) {
+
                 Toast.makeText(
                     this,
                     "Please select a date",
@@ -124,6 +128,7 @@ class MaintenanceActivity : AppCompatActivity() {
             }
 
             if (!timeSelected) {
+
                 Toast.makeText(
                     this,
                     "Please select a time",
@@ -144,7 +149,7 @@ class MaintenanceActivity : AppCompatActivity() {
                 0
             )
 
-            // Check whether selected time is in the past
+            // Check future date/time
             if (calendar.timeInMillis <= System.currentTimeMillis()) {
 
                 Toast.makeText(
@@ -155,9 +160,35 @@ class MaintenanceActivity : AppCompatActivity() {
 
                 return@setOnClickListener
             }
+            val alarmManager =
+                getSystemService(ALARM_SERVICE) as AlarmManager
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+
+                if (!alarmManager.canScheduleExactAlarms()) {
+
+                    Toast.makeText(
+                        this,
+                        "Please allow exact alarm permission",
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                    val settingsIntent =
+                        Intent(
+                            Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM
+                        )
+
+                    startActivity(settingsIntent)
+
+                    return@setOnClickListener
+                }
+            }
 
             val reminderIntent =
-                Intent(this, ReminderReceiver::class.java)
+                Intent(
+                    this,
+                    ReminderReceiver::class.java
+                )
 
             reminderIntent.putExtra(
                 "clothingName",
@@ -173,23 +204,7 @@ class MaintenanceActivity : AppCompatActivity() {
                             PendingIntent.FLAG_IMMUTABLE
                 )
 
-            val alarmManager =
-                getSystemService(ALARM_SERVICE)
-                        as AlarmManager
-
-            // Check exact alarm permission
-            if (!alarmManager.canScheduleExactAlarms()) {
-
-                Toast.makeText(
-                    this,
-                    "Please allow exact alarms in Settings",
-                    Toast.LENGTH_LONG
-                ).show()
-
-                return@setOnClickListener
-            }
-
-            alarmManager.setExactAndAllowWhileIdle(
+            alarmManager.setExact(
                 AlarmManager.RTC_WAKEUP,
                 calendar.timeInMillis,
                 pendingIntent
@@ -202,7 +217,10 @@ class MaintenanceActivity : AppCompatActivity() {
             ).show()
 
             val homeIntent =
-                Intent(this, HomeActivity::class.java)
+                Intent(
+                    this,
+                    HomeActivity::class.java
+                )
 
             homeIntent.flags =
                 Intent.FLAG_ACTIVITY_CLEAR_TOP or

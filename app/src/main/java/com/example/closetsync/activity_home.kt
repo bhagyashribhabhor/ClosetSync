@@ -22,23 +22,18 @@ class HomeActivity : AppCompatActivity() {
         }
 
         val btnOutfit = findViewById<MaterialButton>(R.id.btnOutfit)
-
         btnOutfit.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Outfit Planner coming next!",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(this, OutfitPlannerActivity::class.java)
+            startActivity(intent)
         }
 
         val btnHistory = findViewById<MaterialButton>(R.id.btnHistory)
-
         btnHistory.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Outfit History coming next!",
-                Toast.LENGTH_SHORT
-            ).show()
+
+            val intent =
+                Intent(this, OutfitHistoryActivity::class.java)
+
+            startActivity(intent)
         }
 
         val btnMaintenance = findViewById<MaterialButton>(R.id.btnMaintenance)

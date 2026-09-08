@@ -16,7 +16,7 @@ class ReminderReceiver : BroadcastReceiver() {
             context.getSystemService(Context.NOTIFICATION_SERVICE)
                     as NotificationManager
 
-        // Create notification channel
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             val channel = NotificationChannel(
