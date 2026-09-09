@@ -2,55 +2,78 @@ package com.example.closetsync
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
 
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_home)
 
-
-        val btnWardrobe = findViewById<MaterialButton>(R.id.btnWardrobe)
+        // My Wardrobe
+        val btnWardrobe =
+            findViewById<TextView>(R.id.btnWardrobe)
 
         btnWardrobe.setOnClickListener {
-            val intent = Intent(this, WardrobeActivity::class.java)
-            startActivity(intent)
+            startActivity(
+                Intent(this, WardrobeActivity::class.java)
+            )
         }
 
-        val btnOutfit = findViewById<MaterialButton>(R.id.btnOutfit)
+
+        // Plan an Outfit
+        val btnOutfit =
+            findViewById<TextView>(R.id.btnOutfit)
+
         btnOutfit.setOnClickListener {
-            val intent = Intent(this, OutfitPlannerActivity::class.java)
-            startActivity(intent)
+            startActivity(
+                Intent(this, OutfitPlannerActivity::class.java)
+            )
         }
 
-        val btnHistory = findViewById<MaterialButton>(R.id.btnHistory)
+
+        // Outfit History
+        val btnHistory =
+            findViewById<TextView>(R.id.btnHistory)
+
         btnHistory.setOnClickListener {
-
-            val intent =
+            startActivity(
                 Intent(this, OutfitHistoryActivity::class.java)
-
-            startActivity(intent)
+            )
         }
 
-        val btnMaintenance = findViewById<MaterialButton>(R.id.btnMaintenance)
+
+        // Clothing Maintenance
+        val btnMaintenance =
+            findViewById<TextView>(R.id.btnMaintenance)
 
         btnMaintenance.setOnClickListener {
-            val intent = Intent(this, MaintenanceActivity::class.java)
-            startActivity(intent)
+            startActivity(
+                Intent(this, MaintenanceActivity::class.java)
+            )
         }
 
-        val btnWishlist = findViewById<MaterialButton>(R.id.btnWishlist)
+
+        // Wishlist
+        val btnWishlist =
+            findViewById<TextView>(R.id.btnWishlist)
 
         btnWishlist.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Wishlist coming next!",
-                Toast.LENGTH_SHORT
-            ).show()
+            startActivity(
+                Intent(this, WishlistActivity::class.java)
+            )
+        }
+
+
+        // AI Outfit Stylist
+        val btnAIStylist =
+            findViewById<TextView>(R.id.btnAIStylist)
+
+        btnAIStylist.setOnClickListener {
+            startActivity(
+                Intent(this, AIStylistActivity::class.java)
+            )
         }
     }
 }

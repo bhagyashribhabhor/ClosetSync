@@ -7,94 +7,215 @@
     android:layout_height="match_parent"
     android:background="#FFF7FF">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- Welcome -->
         <TextView
             android:id="@+id/tvWelcome"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Welcome to ClosetSync 👋"
             android:textColor="#7652A8"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Subtitle -->
         <TextView
             android:id="@+id/tvSubtitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Plan your outfits. Organize your wardrobe."
             android:textColor="#666666"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Section Title -->
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tvActionTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="28dp"
             android:text="What would you like to do?"
             android:textColor="#333333"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnWardrobe"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+        <!-- Wardrobe Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWardrobe"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
             android:layout_marginTop="18dp"
-            android:text="👕  My Wardrobe"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7652A8"
-            app:cornerRadius="18dp" />
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/tvActionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnOutfit"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            <TextView
+                android:id="@+id/btnWardrobe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="👕  My Wardrobe"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Outfit Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardOutfit"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
             android:layout_marginTop="12dp"
-            android:text="👗  Plan an Outfit"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7652A8"
-            app:cornerRadius="18dp" />
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardWardrobe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnHistory"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            <TextView
+                android:id="@+id/btnOutfit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="👗  Plan an Outfit"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- History Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHistory"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
             android:layout_marginTop="12dp"
-            android:text="📜  Outfit History"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7652A8"
-            app:cornerRadius="18dp" />
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardOutfit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnMaintenance"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            <TextView
+                android:id="@+id/btnHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="📜  Outfit History"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Maintenance Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMaintenance"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
             android:layout_marginTop="12dp"
-            android:text="🧺  Clothing Maintenance"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7652A8"
-            app:cornerRadius="18dp" />
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardHistory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnWishlist"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            <TextView
+                android:id="@+id/btnMaintenance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="🧺  Clothing Maintenance"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Wishlist Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWishlist"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
             android:layout_marginTop="12dp"
-            android:text="❤️  My Wishlist"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7652A8"
-            app:cornerRadius="18dp" />
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardMaintenance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/btnWishlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="❤️  My Wishlist"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- AI Stylist Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAIStylist"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardWishlist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/btnAIStylist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="🤖  AI Outfit Stylist"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

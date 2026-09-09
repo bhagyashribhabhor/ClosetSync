@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7FF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- AI Title -->
+        <TextView
+            android:id="@+id/tvAITitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="🤖 AI Outfit Stylist"
+            android:textColor="#7652A8"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvAISubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Your personal AI fashion assistant"
+            android:textColor="#666666"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvAITitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Photo Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPhoto"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#F0E5FA"
+            app:layout_constraintTop_toBottomOf="@id/tvAISubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/ivOutfitPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_camera"
+                android:scaleType="centerInside"
+                android:contentDescription="Selected outfit photo" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Camera Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCamera"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardPhoto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnTakePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="📷  Take Photo"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Gallery Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardGallery"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#7652A8"
+            app:layout_constraintTop_toBottomOf="@id/cardCamera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnChoosePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="🖼️  Choose Photo"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- AI Options Title -->
+        <TextView
+            android:id="@+id/tvAIOptionsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="✨ What can AI help you with?"
+            android:textColor="#333333"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardGallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- AI Options Container -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAIOptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="#F0E5FA"
+            app:layout_constraintTop_toBottomOf="@id/tvAIOptionsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <!-- Chat with AI -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardChatAI"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#7652A8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/btnChatAI"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="💬  Chat with AI"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Suggest Outfit -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSuggest"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/cardChatAI"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/btnSuggestOutfit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="👗  Give Me an Outfit"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Style Outfit -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/cardSuggest"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/btnStyleOutfit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="✨  Style This Item"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Improve Look -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardImprove"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/cardStyle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/btnImproveLook"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="📸  Analyze My Outfit"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Styling Ideas -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardIdeas"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/cardImprove"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/btnStylingIdeas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="💡  Styling Ideas"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

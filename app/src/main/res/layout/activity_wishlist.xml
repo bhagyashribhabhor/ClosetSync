@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Wishlist ❤️"
+            android:textColor="#7652A8"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save clothing items you want to add later"
+            android:textColor="#777777"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp" />
+
+        <EditText
+            android:id="@+id/etWishlistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Clothing / Item Name"
+            android:inputType="text"
+            android:padding="14dp"
+            android:layout_marginBottom="15dp" />
+
+        <EditText
+            android:id="@+id/etWishlistCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category (Dress, Shoes, Shirt...)"
+            android:inputType="text"
+            android:padding="14dp"
+            android:layout_marginBottom="15dp" />
+
+        <EditText
+            android:id="@+id/etWishlistColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Color"
+            android:inputType="text"
+            android:padding="14dp"
+            android:layout_marginBottom="15dp" />
+
+        <EditText
+            android:id="@+id/etWishlistOccasion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Occasion (Casual, Party, Festival...)"
+            android:inputType="text"
+            android:padding="14dp"
+            android:layout_marginBottom="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveWishlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="❤️ Add to Wishlist"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#7652A8"
+            android:padding="14dp" />
+
+        <TextView
+            android:id="@+id/tvWishlistItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your wishlist is empty ❤️"
+            android:textColor="#555555"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="40dp" />
+
+    </LinearLayout>
+
+</ScrollView>
