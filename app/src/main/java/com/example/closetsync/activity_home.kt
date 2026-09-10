@@ -11,7 +11,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // My Wardrobe
         val btnWardrobe =
             findViewById<TextView>(R.id.btnWardrobe)
 
@@ -21,8 +20,6 @@ class HomeActivity : AppCompatActivity() {
             )
         }
 
-
-        // Plan an Outfit
         val btnOutfit =
             findViewById<TextView>(R.id.btnOutfit)
 
@@ -32,8 +29,6 @@ class HomeActivity : AppCompatActivity() {
             )
         }
 
-
-        // Outfit History
         val btnHistory =
             findViewById<TextView>(R.id.btnHistory)
 
@@ -43,8 +38,6 @@ class HomeActivity : AppCompatActivity() {
             )
         }
 
-
-        // Clothing Maintenance
         val btnMaintenance =
             findViewById<TextView>(R.id.btnMaintenance)
 
@@ -54,8 +47,6 @@ class HomeActivity : AppCompatActivity() {
             )
         }
 
-
-        // Wishlist
         val btnWishlist =
             findViewById<TextView>(R.id.btnWishlist)
 
@@ -65,8 +56,6 @@ class HomeActivity : AppCompatActivity() {
             )
         }
 
-
-        // AI Outfit Stylist
         val btnAIStylist =
             findViewById<TextView>(R.id.btnAIStylist)
 

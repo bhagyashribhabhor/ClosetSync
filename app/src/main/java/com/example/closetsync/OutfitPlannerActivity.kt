@@ -15,7 +15,6 @@ class OutfitPlannerActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_outfit_planner)
 
-        // Find all fields
         val etOutfitName =
             findViewById<EditText>(R.id.etOutfitName)
 
@@ -34,7 +33,6 @@ class OutfitPlannerActivity : AppCompatActivity() {
         val btnSaveOutfit =
             findViewById<MaterialButton>(R.id.btnSaveOutfit)
 
-        // Save Outfit button
         btnSaveOutfit.setOnClickListener {
 
             val outfitName =
@@ -52,7 +50,6 @@ class OutfitPlannerActivity : AppCompatActivity() {
             val occasion =
                 etOccasion.text.toString().trim()
 
-            // Check all fields
             if (outfitName.isEmpty() ||
                 top.isEmpty() ||
                 bottom.isEmpty() ||
@@ -69,7 +66,6 @@ class OutfitPlannerActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Get saved outfits
             val preferences =
                 getSharedPreferences(
                     "ClosetSyncOutfits",
@@ -85,7 +81,6 @@ class OutfitPlannerActivity : AppCompatActivity() {
             val outfitList =
                 JSONArray(savedOutfits)
 
-            // Create new outfit
             val outfit =
                 JSONObject()
 
@@ -114,10 +109,8 @@ class OutfitPlannerActivity : AppCompatActivity() {
                 occasion
             )
 
-            // Add outfit to list
             outfitList.put(outfit)
 
-            // Save list
             preferences.edit()
                 .putString(
                     "outfitList",
@@ -131,7 +124,6 @@ class OutfitPlannerActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
 
-            // Close activity
             finish()
         }
     }

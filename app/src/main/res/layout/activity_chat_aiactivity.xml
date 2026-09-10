@@ -7,10 +7,6 @@
     android:layout_height="match_parent"
     android:background="#FFF7FF">
 
-    <!-- ========================= -->
-    <!-- CHAT TITLE -->
-    <!-- ========================= -->
-
     <TextView
         android:id="@+id/tvChatTitle"
         android:layout_width="0dp"
@@ -25,11 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <!-- ========================= -->
-    <!-- CHAT CARD -->
-    <!-- ========================= -->
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardChat"
@@ -67,11 +58,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
-    <!-- ========================= -->
-    <!-- MESSAGE INPUT CARD -->
-    <!-- ========================= -->
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardInput"
         android:layout_width="0dp"
@@ -90,10 +76,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp">
-
-            <!-- ========================= -->
-            <!-- MESSAGE BOX -->
-            <!-- ========================= -->
 
             <EditText
                 android:id="@+id/etMessage"
@@ -115,10 +97,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-
-            <!-- ========================= -->
-            <!-- SEND BUTTON -->
-            <!-- ========================= -->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSend"

@@ -5,73 +5,186 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FF">
+    android:background="#FFF7FF"
+    android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="20dp">
 
+
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tvAddClothingTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Add Clothing 👕"
             android:textColor="#7652A8"
             android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/etClothingName"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardClothingForm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Clothing Name"
-            android:padding="12dp"/>
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#F0E5FA"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAddClothingTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/etCategory"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="15dp"
-            android:hint="Category (Shirt, Jeans, Dress...)"
-            android:padding="12dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp">
 
-        <EditText
-            android:id="@+id/etColor"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="15dp"
-            android:hint="Color"
-            android:padding="12dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilClothingName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Clothing Name"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/etSeason"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="15dp"
-            android:hint="Season (Summer, Winter...)"
-            android:padding="12dp"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etClothingName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="12dp" />
 
-        <EditText
-            android:id="@+id/etOccasion"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="15dp"
-            android:hint="Occasion (Casual, Party...)"
-            android:padding="12dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSaveClothing"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="25dp"
-            android:text="SAVE CLOTHING"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7652A8"
-            app:cornerRadius="18dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Category (Shirt, Jeans, Dress...)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/tilClothingName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-    </LinearLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilColor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Color"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/tilCategory"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilSeason"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Season (Summer, Winter...)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/tilColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSeason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilOccasion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Occasion (Casual, Party...)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/tilSeason"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOccasion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveClothing"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="25dp"
+                    android:text="SAVE CLOTHING"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#7652A8"
+                    app:cornerRadius="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/tilOccasion"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

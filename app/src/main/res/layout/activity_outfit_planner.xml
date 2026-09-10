@@ -1,91 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FF">
+    android:background="#FFF7FF"
+    android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
+
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvOutfitTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Outfit Planner 👗"
             android:textColor="#7652A8"
             android:textSize="28sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_marginBottom="8dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvOutfitSubtitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Create and save your perfect outfit"
             android:textColor="#777777"
             android:textSize="16sp"
             android:gravity="center"
-            android:layout_marginBottom="30dp" />
+            app:layout_constraintTop_toBottomOf="@id/tvOutfitTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/etOutfitName"
-            android:layout_width="match_parent"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardOutfitForm"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Outfit Name"
-            android:inputType="textCapSentences"
-            android:padding="14dp"
-            android:layout_marginBottom="14dp" />
+            android:layout_marginTop="25dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvOutfitSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/etTop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Top (T-shirt / Shirt / Kurti)"
-            android:inputType="textCapSentences"
-            android:padding="14dp"
-            android:layout_marginBottom="14dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
 
-        <EditText
-            android:id="@+id/etBottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bottom (Jeans / Trousers / Skirt)"
-            android:inputType="textCapSentences"
-            android:padding="14dp"
-            android:layout_marginBottom="14dp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outfitNameLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Outfit Name"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxStrokeColor="#7652A8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/etShoes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Shoes"
-            android:inputType="textCapSentences"
-            android:padding="14dp"
-            android:layout_marginBottom="14dp" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOutfitName"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:inputType="textCapSentences" />
 
-        <EditText
-            android:id="@+id/etOccasion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Occasion (College / Party / Casual)"
-            android:inputType="textCapSentences"
-            android:padding="14dp"
-            android:layout_marginBottom="24dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSaveOutfit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Outfit 👗"
-            android:textSize="17sp"
-            android:textColor="#FFFFFF"
-            android:padding="14dp"
-            app:backgroundTint="#7652A8"
-            app:cornerRadius="12dp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/topLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Top (T-shirt / Shirt / Kurti)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxStrokeColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/outfitNameLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-    </LinearLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:inputType="textCapSentences" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bottomLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Bottom (Jeans / Trousers / Skirt)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxStrokeColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/topLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:inputType="textCapSentences" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- ========================= -->
+                <!-- SHOES -->
+                <!-- ========================= -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoesLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Shoes"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxStrokeColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/bottomLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etShoes"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:inputType="textCapSentences" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- ========================= -->
+                <!-- OCCASION -->
+                <!-- ========================= -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/occasionLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Occasion (College / Party / Casual)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxStrokeColor="#7652A8"
+                    app:layout_constraintTop_toBottomOf="@id/shoesLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOccasion"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:inputType="textCapSentences" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- ========================= -->
+                <!-- SAVE OUTFIT -->
+                <!-- ========================= -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveOutfit"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Save Outfit 👗"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#7652A8"
+                    app:cornerRadius="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/occasionLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

@@ -23,11 +23,9 @@ class loginActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
 
-            // Open Home Screen
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
 
-            // Close Login screen
             finish()
         }
     }

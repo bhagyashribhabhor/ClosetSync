@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
-        <!-- Welcome -->
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="0dp"
@@ -25,7 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Subtitle -->
         <TextView
             android:id="@+id/tvSubtitle"
             android:layout_width="0dp"
@@ -38,7 +36,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Section Title -->
         <TextView
             android:id="@+id/tvActionTitle"
             android:layout_width="0dp"
@@ -52,7 +49,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Wardrobe Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardWardrobe"
             android:layout_width="0dp"
@@ -79,7 +75,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Outfit Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardOutfit"
             android:layout_width="0dp"
@@ -106,7 +101,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- History Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardHistory"
             android:layout_width="0dp"
@@ -133,7 +127,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Maintenance Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardMaintenance"
             android:layout_width="0dp"
@@ -160,7 +153,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Wishlist Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardWishlist"
             android:layout_width="0dp"
@@ -187,7 +179,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- AI Stylist Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAIStylist"
             android:layout_width="0dp"

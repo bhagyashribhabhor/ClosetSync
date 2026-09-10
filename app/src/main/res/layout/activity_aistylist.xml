@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
-        <!-- AI Title -->
         <TextView
             android:id="@+id/tvAITitle"
             android:layout_width="0dp"
@@ -25,7 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Subtitle -->
         <TextView
             android:id="@+id/tvAISubtitle"
             android:layout_width="0dp"
@@ -38,7 +36,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Photo Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardPhoto"
             android:layout_width="0dp"
@@ -61,7 +58,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Camera Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardCamera"
             android:layout_width="0dp"
@@ -88,7 +84,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Gallery Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardGallery"
             android:layout_width="0dp"
@@ -115,7 +110,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- AI Options Title -->
         <TextView
             android:id="@+id/tvAIOptionsTitle"
             android:layout_width="0dp"
@@ -129,7 +123,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- AI Options Container -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAIOptions"
             android:layout_width="0dp"
@@ -147,7 +140,6 @@
                 android:layout_height="wrap_content"
                 android:padding="12dp">
 
-                <!-- Chat with AI -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardChatAI"
                     android:layout_width="0dp"
@@ -173,7 +165,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Suggest Outfit -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardSuggest"
                     android:layout_width="0dp"
@@ -200,7 +191,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Style Outfit -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardStyle"
                     android:layout_width="0dp"
@@ -227,7 +217,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Improve Look -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardImprove"
                     android:layout_width="0dp"
@@ -254,7 +243,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Styling Ideas -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardIdeas"
                     android:layout_width="0dp"
